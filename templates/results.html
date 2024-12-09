@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEJ Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .logo span:nth-child(1) { color: #4285F4; } /* Blue */
+        .logo span:nth-child(2) { color: #EA4335; } /* Red */
+        .logo span:nth-child(3) { color: #FBBC05; } /* Yellow */
+        .logo span:nth-child(4) { color: #34A853; } /* Green */
+        .results-container {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 30px;
+        }
+        .result-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .result-card h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .result-card h3 {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .result-card p {
+            margin: 10px 0;
+            color: #555;
+        }
+        .result-card a {
+            color: #4285F4;
+            text-decoration: none;
+        }
+        .result-card a:hover {
+            text-decoration: underline;
+        }
+        .no-results {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            margin-top: 50px;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            background-color: #4285F4;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            border: none;
+        }
+        .back-button:hover {
+            background-color: #3367D6;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <span>A</span><span>L</span><span>E</span><span>J</span> Search
+    </div>
+    <div class="results-container">
+        {% if results %}
+            <h1>Search Results</h1>
+            {% for result in results %}
+                <div class="result-card">
+                    <h2><a href="{{ result.url }}" target="_blank">{{ result.title }}</a></h2>
+                    <h3>{{ result.headline }}</h3>
+                    <p>{{ result.preview }}...</p>
+                    <p><a href="{{ result.url }}" target="_blank">{{ result.url }}</a></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-results">
+                <h1>No Results Found</h1>
+                <p>Your query "{{ original_query }}" did not match any documents.</p>
+            </div>
+        {% endif %}
+        <a href="/" class="back-button">Back to Search</a>
+    </div>
+</body>
+</html>

@@ -2,3 +2,4 @@ flask
 whoosh
 BeautifulSoup4
 requests
+nltk

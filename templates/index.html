@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEJ Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 64px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+        .logo span:nth-child(1) { color: #4285F4; } /* Blue */
+        .logo span:nth-child(2) { color: #EA4335; } /* Red */
+        .logo span:nth-child(3) { color: #FBBC05; } /* Yellow */
+        .logo span:nth-child(4) { color: #34A853; } /* Green */
+        .search-container {
+            margin-top: 20px;
+        }
+        .search-input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #4285F4;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #3367D6;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <span>A</span><span>L</span><span>E</span><span>J</span> Search
+    </div>
+    <div class="search-container">
+        <form action="/results" method="POST">
+            <input type="text" name="query" class="search-input" placeholder="Search ALEJ..." required>
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+</body>
+</html>
