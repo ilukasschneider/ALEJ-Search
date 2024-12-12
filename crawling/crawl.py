@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin
 
-from calendar import c
 # Define the schema of the index
 schema = Schema(word=TEXT(stored=True), url=TEXT)
 
