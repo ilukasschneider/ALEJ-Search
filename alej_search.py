@@ -2,12 +2,15 @@ from flask import Flask, render_template, request
 from whoosh.index import open_dir
 from whoosh.qparser import QueryParser
 from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
 import nltk
 
 # Ensure NLTK resources are downloaded
 nltk.download('punkt')
 nltk.download('stopwords')
+
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 app = Flask(__name__)
 
@@ -19,7 +22,7 @@ metadata_ix = open_dir(metadata_index_path)
 
 # Initialize NLTK tools
 stop_words = set(stopwords.words('english'))
-stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
 
 @app.route('/', methods=['GET'])
 def index():
@@ -32,10 +35,10 @@ def results():
     user_query = request.form['query']
     original_query = user_query
 
-    
+
     query_words = nltk.word_tokenize(user_query.lower())
-    stemmed_words = [stemmer.stem(word) for word in query_words if word.isalpha() and word not in stop_words]
-    search_query = " OR ".join(stemmed_words)
+    lematized_words = [lemmatizer.lemmatize(word) for word in query_words if word.isalpha() and word not in stop_words]
+    search_query = " OR ".join(lematized_words)
 
     # Search word index to find matching URLs
     matching_urls = set()

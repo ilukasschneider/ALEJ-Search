@@ -1,0 +1,300 @@
+Document 0:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron
+
+Document 1:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#bodyContent
+
+Document 2:
+headline: Main Page
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Wikipedia, the free encyclopedia
+url: https://en.wikipedia.org/wiki/Main_Page
+
+Document 3:
+headline: Wikipedia:Contents
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Wikipedia:Contents - Wikipedia
+url: https://en.wikipedia.org/wiki/Wikipedia:Contents
+
+Document 4:
+headline: Portal:Current events
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Portal:Current events - Wikipedia
+url: https://en.wikipedia.org/wiki/Portal:Current_events
+
+Document 5:
+headline: Black-naped fruit dove
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Black-naped fruit dove - Wikipedia
+url: https://en.wikipedia.org/wiki/Special:Random
+
+Document 6:
+headline: Wikipedia:About
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Wikipedia:About - Wikipedia
+url: https://en.wikipedia.org/wiki/Wikipedia:About
+
+Document 7:
+headline: Wikipedia:Contact us
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Wikipedia:Contact us - Wikipedia
+url: https://en.wikipedia.org/wiki/Wikipedia:Contact_us
+
+Document 8:
+headline: Help:Contents
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Help:Contents - Wikipedia
+url: https://en.wikipedia.org/wiki/Help:Contents
+
+Document 9:
+headline: Help:Introduction
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Help:Introduction - Wikipedia
+url: https://en.wikipedia.org/wiki/Help:Introduction
+
+Document 10:
+headline: Wikipedia:Community portal
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Wikipedia:Community portal - Wikipedia
+url: https://en.wikipedia.org/wiki/Wikipedia:Community_portal
+
+Document 11:
+headline: Recent changes
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileLanguagesSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged o
+title: Recent changes - Wikipedia
+url: https://en.wikipedia.org/wiki/Special:RecentChanges
+
+Document 12:
+headline: Wikipedia:File upload wizard
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Wikipedia:File upload wizard - Wikipedia
+url: https://en.wikipedia.org/wiki/Wikipedia:File_upload_wizard
+
+Document 13:
+headline: Search
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileLanguagesSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged o
+title: Search - Wikipedia
+url: https://en.wikipedia.org/wiki/Special:Search
+
+Document 14:
+headline: User contributions for 77.21.226.126
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileLanguagesSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged o
+title: User contributions for 77.21.226.126 - Wikipedia
+url: https://en.wikipedia.org/wiki/Special:MyContributions
+
+Document 15:
+headline: User talk:77.21.226.126
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: User talk:77.21.226.126 - Wikipedia
+url: https://en.wikipedia.org/wiki/Special:MyTalk
+
+Document 16:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Early_life
+
+Document 17:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Professional_career
+
+Document 18:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Inspector_of_Finances
+
+Document 19:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Investment_banker
+
+Document 20:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Early_political_career
+
+Document 21:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Deputy_Secretary-General_of_the_Élysée_(2012-2014)
+
+Document 22:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Minister_of_Economics_and_Industry_(2014-2017)
+
+Document 23:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Macron_Law
+
+Document 24:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#2017_presidential_campaign
+
+Document 25:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Formation_of_En_Marche_and_resignation_from_government
+
+Document 26:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#First_round_of_the_presidential_election
+
+Document 27:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Second_round_of_the_presidential_election
+
+Document 28:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#First_term_(2017–2022)
+
+Document 29:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Domestic_policy
+
+Document 30:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Anti-corruption
+
+Document 31:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Labour_policy_and_unions
+
+Document 32:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Migrant_crisis
+
+Document 33:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Economic_policy
+
+Document 34:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Terrorism
+
+Document 35:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Civil_rights
+
+Document 36:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Foreign_policy_and_national_defence
+
+Document 37:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Approval_ratings
+
+Document 38:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Benalla_affair
+
+Document 39:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#2022_presidential_campaign
+
+Document 40:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Second_term_(2022–present)
+
+Document 41:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Borne_government
+
+Document 42:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#June_2022_legislative_election
+
+Document 43:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Domestic_affairs
+
+Document 44:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Pension_reform
+
+Document 45:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Votes_of_no-confidence_in_the_Borne_government
+
+Document 46:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Nahel_Merzouk_riots
+
+Document 47:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#2023_government_reshuffle
+
+Document 48:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Defence_policy
+
+Document 49:
+headline: Emmanuel Macron
+preview: Main menuMain menumove to sidebarhideNavigationMain pageContentsCurrent eventsRandom articleAbout WikipediaContact usContributeHelpLearn to editCommunity portalRecent changesUpload fileSearchSearchAppearanceDonateCreate accountLog inPersonal toolsDonateCreate accountLog inPages for logged out editor
+title: Emmanuel Macron - Wikipedia
+url: https://en.wikipedia.org/wiki/Emmanuel_Macron#Immigration_policy
+
