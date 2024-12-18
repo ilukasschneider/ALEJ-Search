@@ -19,11 +19,9 @@ flask --app alej_search run
     - metadata_index: stores title, headline and preview for every url encountered
 
 ## Search:
-- All the CSS done by ChatGPT (im too stupid for style)
 - Stemms search term
 - First searches the word_index and lists the urls
 - Then searches the metadata_index for infos about urls
-
 
 # Improvement Ideas 
 - use more sophisticated ranking (pagerank maybe?)

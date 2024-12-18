@@ -1,0 +1,56 @@
+Document 0:
+content:  page 5 thi is page 5 in european literatur and art , the unicorn ha for the last thousand year or so been depict as a white horse-lik or goat-lik anim with a long straight horn with spiral groov , cloven hoov , and sometim a goat 's beard . in the middl age and renaiss , it wa commonli describ as an extrem wild woodland creatur , a symbol of puriti and grace , which could be captur onli by a virgin . page 2 home page
+headline: This is Page 5
+preview: In European literature and art, the unicorn has for the last thousand years or so been depicted as a white horse-like or goat-like animal with a long straight horn with spiralling grooves, cloven hooves, and sometimes a goat's beard. In the Middle Ages and Renaissance, it was commonly described as a
+title: Page 5
+url: https://vm009.rz.uos.de/crawl/page5.html
+
+Document 1:
+preview: The platypus (Ornithorhynchus anatinus) is a semiaquatic, egg-laying mammal endemic to eastern Australia, including Tasmania. The platypus is the sole living representative or monotypic taxon of its family Ornithorhynchidae and genus Ornithorhynchus, though a number of related species appear in the 
+url: https://vm009.rz.uos.de/crawl/index.html
+content:  home page welcom to the home page the platypu ( ornithorhynchu anatinu ) is a semiaquat , egg-lay mammal endem to eastern australia , includ tasmania . the platypu is the sole live repres or monotyp taxon of it famili ornithorhynchida and genu ornithorhynchu , though a number of relat speci appear in the fossil record . page 1 page 2 page 3
+headline: Welcome to the Home Page
+title: Home Page
+
+Document 2:
+preview: The unusual appearance of this egg-laying, duck-billed, beaver-tailed, otter-footed mammal at first baffled European naturalists. In 1799, the first scientists to examine a preserved platypus body judged it a fake made of several animals sewn together.
+url: https://vm009.rz.uos.de/crawl/page1.html
+content:  page 1 thi is page 1 the unusu appear of thi egg-lay , duck-bil , beaver-tail , otter-foot mammal at first baffl european naturalist . in 1799 , the first scientist to examin a preserv platypu bodi judg it a fake made of sever anim sewn togeth . page 4 home page
+headline: This is Page 1
+title: Page 1
+
+Document 3:
+preview: In 1799, the first scientists to examine a preserved platypus body judged it a fake made of several animals sewn together. The unique features of the platypus make it important in the study of evolutionary biology, and a recognisable and iconic symbol of Australia.
+url: https://vm009.rz.uos.de/crawl/page2.html
+content:  page 2 thi is page 2 in 1799 , the first scientist to examin a preserv platypu bodi judg it a fake made of sever anim sewn togeth . the uniqu featur of the platypu make it import in the studi of evolutionari biolog , and a recognis and icon symbol of australia . page 5 uni osnabrück home page
+headline: This is Page 2
+title: Page 2
+
+Document 4:
+preview: The unique features of the platypus make it important in the study of evolutionary biology, and a recognisable and iconic symbol of Australia. It is culturally significant to several Aboriginal peoples, who also used to hunt it for food. It has appeared as a national mascot, features on the reverse 
+url: https://vm009.rz.uos.de/crawl/page3.html
+content:  page 3 thi is page 3 the uniqu featur of the platypu make it import in the studi of evolutionari biolog , and a recognis and icon symbol of australia . it is cultur signific to sever aborigin peopl , who also use to hunt it for food . it ha appear as a nation mascot , featur on the revers of the australian twenty-c coin , and is an emblem of the state of new south wale . page 6 home page
+headline: This is Page 3
+title: Page 3
+
+Document 5:
+preview: The unicorn is a legendary creature that has been described since antiquity as a beast with a single large, pointed, spiraling horn projecting from its forehead.
+url: https://vm009.rz.uos.de/crawl/page4.html
+content:  page 4 thi is page 4 the unicorn is a legendari creatur that ha been describ sinc antiqu as a beast with a singl larg , point , spiral horn project from it forehead . page 1 home page
+headline: This is Page 4
+title: Page 4
+
+Document 6:
+content:  page 6 thi is page 6 in a world of pixel and byte so torn , live a quirki platypu and a geeki unicorn . platypu code , with fin so deft , while unicorn debug , with everi breath left . `` did you know , '' said plat , with a glint in hi eye , '' that i 'm a mammal that lay egg , oh my ! '' unicorn chuckl , `` and i 've a horn of might , but can not run basic script , tri as i might . '' togeth they ventur , in realm of code and lore , fix glitch , and chase bug galor . for in thi nerdi tale , so uniqu spun , a platypu and unicorn made code fun ! author : chatgpt-4 page 2 page 3 page 7 home page
+headline: This is Page 6
+preview: In a world of pixels and bytes so torn,
+Lived a quirky platypus and a geeky unicorn.
+Platypus coded, with fins so deft,
+While unicorn debugged, with every breath left.
+
+"Did you know," said Plat, with a glint in his eye,
+"That I'm a mammal that lays eggs, oh my!"
+Unicorn chuckled, "And I've a horn o
+title: Page 6
+url: https://vm009.rz.uos.de/crawl/page6.html
+
