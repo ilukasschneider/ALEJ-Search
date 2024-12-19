@@ -12,15 +12,6 @@ nltk.download('stopwords')
 
 app = Flask(__name__)
 
-# Load indices
-word_index_path = "word_index"  # Directory where word index is stored
-metadata_index_path = "metadata_index"  # Directory where metadata index is stored
-word_ix = open_dir(word_index_path)
-metadata_ix = open_dir(metadata_index_path)
-
-# Initialize NLTK tools
-stop_words = set(stopwords.words('english'))
-stemmer = PorterStemmer()
 
 @app.route('/', methods=['GET'])
 def index():
