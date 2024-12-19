@@ -20,6 +20,10 @@ class Crawler:
         self.index = index
         self.base_domain = None
 
+        # pagerank data
+        self.out_count = {} # url: count of outgoing links
+        self.in_urls = {} # url: set of url linking to this url
+
 
     def initialize_crawler(self, start_url):
         self.base_domain = urlparse(start_url).netloc
@@ -34,7 +38,50 @@ class Crawler:
             soup = self.process(current_url)
             if soup:
                 self.parse(current_url, soup)
+        
+        self.pagerank()
 
+    # if an url is not in out_count is hasnt been crawled (e.g. 404) -> this would mess up ranking propagation so remove from in_urls
+    def clean_pr_data(self):
+        for url in list(self.in_urls.keys()):
+            if url not in self.out_count:
+              
+                for in_url in self.in_urls[url]: self.out_count[in_url] -= 1
+
+                del self.in_urls[url]
+
+
+    def calculate_score(self, pr, url):
+        score = 0 
+        for in_url in self.in_urls[url]:
+            if in_url in self.out_count and self.out_count[in_url] > 0: 
+                score += pr[in_url] / self.out_count[in_url]
+        return score
+
+
+    def pagerank(self):
+        max_iterations = 1000
+        tolerance = 1e-6
+        self.clean_pr_data()
+        
+        pr = {key: 1/len(self.out_count) for key in self.out_count}
+
+        for i in range(max_iterations):
+            next_pr = {}
+            for url in pr.keys():  
+                next_pr[url] = self.calculate_score(pr, url)
+
+
+            max_change = max(abs(next_pr[url] - pr[url]) for url in pr.keys())
+            pr = next_pr
+
+            if max_change < tolerance:
+                print(f"Converged after {i + 1} iterations.")
+                break
+
+        print(pr)
+        self.index.add_pr(pr)
+        
 
     # make sure we do not switch the domain
     def is_same_domain(self, link, base_url):
@@ -51,16 +98,26 @@ class Crawler:
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
             links = soup.find_all('a', href=True)
-
+           
+            rel_out = [urljoin(url, link['href']) for link in links if self.is_same_domain(link['href'], url)]
+            
+            self.out_count[url] = len(rel_out)
+            
+            for out in rel_out:
+                if out in self.in_urls:
+                    self.in_urls[out].add(url)
+                else:
+                    self.in_urls[out] = {url}
+                    self.out_count
+            
+           
             self.to_visit.extend(
                 [
-                    urljoin(url, link['href'])
-                    for link in links
-                    # check if it is the same domain
-                    if self.is_same_domain(link['href'], url) and
-                        # make sure it is a new link
-                    urljoin(url, link['href']) not in self.visited and
-                    urljoin(url, link['href']) not in self.to_visit
+                    link
+                    for link in rel_out
+                     # make sure it is a new link
+                    if link not in self.visited and
+                    link not in self.to_visit
                 ]
             )
             return soup
