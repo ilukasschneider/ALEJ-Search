@@ -136,18 +136,17 @@ def expand_contractions(text):
 
 
 def process_text(raw_text):
-    print("Raw text: ", raw_text)
+    
     stemmer = PorterStemmer()
     
-
     processed_text = ""
     raw_text = expand_contractions(raw_text)
-    print("Expand contractions: ", raw_text)
+    
     tokenized_text = nltk.word_tokenize(raw_text.lower())
-    print("tokenized text: ", tokenized_text)
+    
     for word in tokenized_text:
         stemmed_word = stemmer.stem(word)
         processed_text += " " + stemmed_word
        
-    print("Processed text: ", processed_text)
+   
     return processed_text
