@@ -20,7 +20,6 @@ def initialize_crawler(start_url):
     index = Index()
     crawler = Crawler(index)
     crawler.initialize_crawler(start_url)
-    dump_index_to_text("indexdir", "test.txt")
 
 
 
@@ -40,6 +39,7 @@ if __name__ == "__main__":
         start_url = "https://vm009.rz.uos.de/crawl/index.html"
 
         initialize_crawler(start_url)
+        dump_index_to_text("indexdir", "test.txt")
     elif choice == 's':
         query = input("Enter your search query: ")
         search(query)
