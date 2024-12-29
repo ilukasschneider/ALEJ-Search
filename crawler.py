@@ -2,16 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import traceback
-from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer
-from nltk.stem import WordNetLemmatizer
 from tokenizer import *
-
-import nltk
-
-nltk.download("wordnet")
-nltk.download("omw-1.4")
-
 
 class Crawler:
     def __init__(self, index):
@@ -168,6 +159,7 @@ class Crawler:
             # pass url and text to the index
             self.index.index_content(url, text, title, headline, preview)
             
+
         except Exception as e:
             traceback.print_exc()
             print(f"Failed to parse {url}: {e}")
