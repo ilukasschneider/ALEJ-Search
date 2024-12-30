@@ -51,7 +51,7 @@ class Crawler:
                 print("We have a soup!!!")
                 self.parse(current_url, soup)
         
-        #self.pagerank()
+        self.pagerank()
 
     # if an url is not in out_count is hasnt been crawled (e.g. 404) -> this would mess up ranking propagation so remove from in_urls
     def clean_pr_data(self):
@@ -64,10 +64,13 @@ class Crawler:
 
 
     def calculate_score(self, pr, url):
-        score = 0 
-        for in_url in self.in_urls[url]:
-            if in_url in self.out_count and self.out_count[in_url] > 0: 
-                score += pr[in_url] / self.out_count[in_url]
+        score = 0
+        try:
+            for in_url in self.in_urls[url]:
+                if in_url in self.out_count and self.out_count[in_url] > 0:
+                    score += pr[in_url] / self.out_count[in_url]
+        except Exception as e:
+            print(f"Failed to calculate score {e}")
         return score
 
 
@@ -142,11 +145,11 @@ class Crawler:
         print("in extract_metadata")
         try:
             title = soup.title.string if soup.title else "No Title"
-            print("title")
+
             headline = soup.find('h1').get_text(strip=True) if soup.find('h1') else "No Headline"
-            print("headline")
+
             relevant_tags = {"p", "pre", "article", "section", "div"}
-            print("relevant_tags")
+
             preview = ""
             for element in soup.body.descendants:
                 if element.name in relevant_tags:
@@ -165,7 +168,7 @@ class Crawler:
                     raw_text = raw_text.replace(headline, "")
                 preview = raw_text[:300]
 
-            preview = preview.strip()[:20]
+            preview = preview.strip()[:200]
         except Exception as e:
             print("Error while extracting metadata ", e)
 

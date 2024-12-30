@@ -74,7 +74,6 @@ def results():
         user_query=user_query
     )
 
-    #return render_template("results.html", results=results, original_query=original_query)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -28,3 +28,6 @@ flask --app alej_search run
 - pagination (only needed if we decide to crawl bigger)(done)
 - Crawl bigger (done)
 - make pagination pretty (next and previous buttons)
+- fix page ranking $\to$ does not work properly?
+- fix preview
+- delete unnecessary print statements
