@@ -19,7 +19,6 @@ class Crawler:
 
 
     def initialize_crawler(self, start_url):
-        print("in initalize")
         self.base_domain = urlparse(start_url).netloc
         self.to_visit.append(start_url)
 
@@ -28,7 +27,7 @@ class Crawler:
         self.robot_parser.set_url(robots_url)
         try:
             self.robot_parser.read()
-            print(f"Loaded robots.txt from {robots_url}")
+
         except Exception as e:
             print(f"Failed to load robots.txt {e}")
             self.robot_parser = None # assume all paths are allowed
@@ -48,7 +47,6 @@ class Crawler:
 
             soup = self.process(current_url)
             if soup:
-                print("We have a soup!!!")
                 self.parse(current_url, soup)
         
         self.pagerank()
@@ -94,7 +92,6 @@ class Crawler:
                 print(f"Converged after {i + 1} iterations.")
                 break
 
-        print(pr)
         self.index.add_pr(pr)
         
 
@@ -107,7 +104,7 @@ class Crawler:
 
     # search for other urls in the current url and append them
     def process(self, url):
-        print("in process")
+
         # get the other urls
         try:
             response = requests.get(url)
@@ -142,7 +139,6 @@ class Crawler:
             return None
 
     def extract_metadata(self, soup):
-        print("in extract_metadata")
         try:
             title = soup.title.string if soup.title else "No Title"
 
@@ -156,7 +152,6 @@ class Crawler:
                     preview = element.get_text(strip=True)
                     if preview:
                         break
-            print("after for")
 
 
             # If no relevant tag is found, use raw text excluding overhead
@@ -179,9 +174,6 @@ class Crawler:
 
     # pass url and text to the index
     def parse(self, url, soup):
-        print("in parse")
-
-
         try:
             # get the content of the page
 
@@ -189,11 +181,9 @@ class Crawler:
             text = process_text(text)
             
             title, headline, preview = self.extract_metadata(soup)
-            print("we got something from metadata")
 
             # pass url and text to the index
             self.index.index_content(url, text, title, headline, preview)
-            print("index added something")
 
         except Exception as e:
             traceback.print_exc()

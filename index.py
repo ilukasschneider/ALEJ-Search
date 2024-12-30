@@ -32,7 +32,7 @@ class Index:
             print(f"Failed to index content from {url}: {e}")
         finally:
             writer.commit()
-            print("in finally")
+
 
 
     def add_pr(self, pr):
@@ -71,8 +71,7 @@ class Index:
                     unique_urls.add(result["url"])
                     res_dict = {"url": result['url'], "title": result["title"], "headline": result["headline"], "preview": result["preview"], "pagerank": result["pagerank"]}
                     result_urls.append(res_dict)
-                    print("URL:", result['url'], result["title"], result["pagerank"])
             
             result_urls.sort(key=lambda x: x["pagerank"], reverse=True) # sort by pagerank
-            print(result_urls)
+
             return result_urls 

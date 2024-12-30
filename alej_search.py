@@ -23,11 +23,9 @@ def index():
 
 
 def search(query):
+
     index = Index()  # Assuming the index is already saved; otherwise, persist it between runs
     results = index.search(query)
-    print("Search results:")
-    for url in results:
-        print(url)
     
     return results
 

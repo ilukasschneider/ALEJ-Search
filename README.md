@@ -23,11 +23,7 @@ flask --app alej_search run
 - First searches the word_index and lists the urls
 - Then searches the metadata_index for infos about urls
 
-# Improvement Ideas 
-- use more sophisticated ranking (pagerank maybe?)
-- pagination (only needed if we decide to crawl bigger)(done)
-- Crawl bigger (done)
-- make pagination pretty (next and previous buttons)
+# Improvement Ideas
+
 - fix page ranking $\to$ does not work properly?
 - fix preview
-- delete unnecessary print statements

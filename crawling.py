@@ -16,7 +16,6 @@ def dump_index_to_text(index_dir, output_file):
             for fieldname, value in fields.items():
                 f.write(f"{fieldname}: {value}\n")
             f.write("\n")
-    print(f"Index from {index_dir} dumped to {output_file}")
 
 
 def initialize_crawler(start_url):
@@ -29,9 +28,6 @@ def initialize_crawler(start_url):
 def search(query):
     index = Index()  # Assuming the index is already saved; otherwise, persist it between runs
     urls = index.search(query)
-    print("Search results:")
-    for url in urls:
-        print(url)
 
 
 if __name__ == "__main__":
