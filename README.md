@@ -25,5 +25,6 @@ flask --app alej_search run
 
 # Improvement Ideas 
 - use more sophisticated ranking (pagerank maybe?)
-- pagination (only needed if we decide to crawl bigger)
-- Crawl bigger 
+- pagination (only needed if we decide to crawl bigger)(done)
+- Crawl bigger (done)
+- make pagination pretty (next and previous buttons)

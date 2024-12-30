@@ -1,6 +1,9 @@
 from crawler import Crawler
 from index import Index
 from whoosh.index import open_dir
+import sys
+
+sys.setrecursionlimit(10000)
 
 
 # writes the indexes to text files for debugging
@@ -32,17 +35,11 @@ def search(query):
 
 
 if __name__ == "__main__":
-    choice = input("Enter 'c' to crawl or 's' to search: ")
 
-    if choice == 'c':
-        #start_url = input("Enter the start URL: ")
-        start_url = "https://vm009.rz.uos.de/crawl/index.html"
+    #start_url = input("Enter the start URL: ")
+    start_url = "https://fs-cogsci.uos.de/"#"https://www.lagerhalle-osnabrueck.de/content/"#"https://aro-schalen.de/"#"https://www.frag-caesar.de"#"https://lotr.fandom.com/wiki/Main_Page"#"https://vm009.rz.uos.de/crawl/index.html"#"https://www.uni-osnabrueck.de/startseite/" #"https://vm009.rz.uos.de/crawl/index.html"
 
-        initialize_crawler(start_url)
-        dump_index_to_text("indexdir", "test.txt")
-    elif choice == 's':
-        query = input("Enter your search query: ")
-        search(query)
-    else:
-        print("Invalid choice! Please enter 'c' or 's'.")
+    initialize_crawler(start_url)
+    dump_index_to_text("indexdir", "test.txt")
+
 

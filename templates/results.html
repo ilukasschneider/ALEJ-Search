@@ -97,6 +97,24 @@
                 <p>Your query "{{ original_query }}" did not match any documents.</p>
             </div>
         {% endif %}
+
+     <!-- Pagination Controls -->
+        <div class="pagination">
+            {% if pagination_info.has_prev %}
+                <a href="{{ url_for('results', query=user_query, page=pagination_info.prev_page) }}">Previous</a>
+            {% else %}
+                <a class="disabled">Previous</a>
+            {% endif %}
+
+            <span>Page {{ pagination_info.current_page }} of {{ pagination_info.total_pages }}</span>
+
+            {% if pagination_info.has_next %}
+                <a href="{{ url_for('results', query=original_query, page=pagination_info.next_page) }}">Next</a>
+            {% else %}
+                <a class="disabled">Next</a>
+            {% endif %}
+        </div>
+
         <a href="/" class="back-button">Back to Search</a>
     </div>
 </body>
