@@ -33,7 +33,7 @@ def search(query):
 if __name__ == "__main__":
 
     #start_url = input("Enter the start URL: ")
-    start_url = "https://fs-cogsci.uos.de/"#"https://www.lagerhalle-osnabrueck.de/content/"#"https://aro-schalen.de/"#"https://www.frag-caesar.de"#"https://lotr.fandom.com/wiki/Main_Page"#"https://vm009.rz.uos.de/crawl/index.html"#"https://www.uni-osnabrueck.de/startseite/" #"https://vm009.rz.uos.de/crawl/index.html"
+    start_url = "https://fs-cogsci.uos.de"
 
     initialize_crawler(start_url)
     dump_index_to_text("indexdir", "test.txt")
