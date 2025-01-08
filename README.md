@@ -20,5 +20,5 @@ python crawler.py
 ### 2. Launch the Frontend
 Once the crawler has finished, start the Flask web server to serve the frontend:
 ~~~bash
-flask --app app run
+flask --app alej_search run
 ~~~
