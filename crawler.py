@@ -73,6 +73,7 @@ class Crawler:
 
 
     def pagerank(self):
+        damping_factor = 0.5
         max_iterations = 1000
         tolerance = 1e-6
         self.clean_pr_data()
@@ -81,9 +82,10 @@ class Crawler:
 
         for i in range(max_iterations):
             next_pr = {}
+            
             for url in pr.keys():  
-                next_pr[url] = self.calculate_score(pr, url)
-
+                next_pr[url] = (1 - damping_factor) / len(self.out_count)
+                next_pr[url] += damping_factor * self.calculate_score(pr, url)
 
             max_change = max(abs(next_pr[url] - pr[url]) for url in pr.keys())
             pr = next_pr
@@ -133,6 +135,7 @@ class Crawler:
                     link not in self.to_visit
                 ]
             )
+
             return soup
         except Exception as e:
             print("Error while processing URL ", e)
@@ -144,7 +147,7 @@ class Crawler:
 
             headline = soup.find('h1').get_text(strip=True) if soup.find('h1') else "No Headline"
 
-            relevant_tags = {"p", "pre", "article", "section", "div"}
+            relevant_tags = {"p", "pre", "article", "section", "h2"}
 
             preview = ""
             for element in soup.body.descendants:
@@ -163,7 +166,7 @@ class Crawler:
                     raw_text = raw_text.replace(headline, "")
                 preview = raw_text[:300]
 
-            preview = preview.strip()[:200]
+            preview = preview.strip()[:300]
         except Exception as e:
             print("Error while extracting metadata ", e)
 

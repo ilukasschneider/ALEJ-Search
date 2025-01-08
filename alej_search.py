@@ -13,7 +13,7 @@ nltk.download('stopwords')
 
 app = Flask(__name__)
 
-RESULTS_PER_PAGE = 2 # modify if you want to change the number of results shown per page
+RESULTS_PER_PAGE = 5 # modify if you want to change the number of results shown per page
 
 
 @app.route('/', methods=['GET'])

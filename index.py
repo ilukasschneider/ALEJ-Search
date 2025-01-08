@@ -41,15 +41,19 @@ class Index:
                 for url, score in pr.items():
                     existing_doc = searcher.document(url=url)
                     if existing_doc:
+                       
+                        content, title, headline, preview = existing_doc.get("content"), existing_doc.get("title"), existing_doc.get("headline"), existing_doc.get("preview")
                         # Needs to be done this way, otherwise will overwrite the other fields.. 
-                        writer.update_document(
+                        writer.delete_by_term("url", url)
+                        writer.add_document(
                             url=url,
-                            content=existing_doc.get("content"),
-                            title=existing_doc.get("title"),
-                            headline=existing_doc.get("headline"),
-                            preview=existing_doc.get("preview"),
+                            content=content ,
+                            title=title,
+                            headline=headline,
+                            preview=preview,
                             pagerank=score 
                         )
+                       
                     else:
                         print(f"Document with URL {url} not found. Skipping.")
                
@@ -62,11 +66,13 @@ class Index:
             query = QueryParser("content", self.ix.schema).parse(query_str)
 
             
-            results = searcher.search(query, sortedby="pagerank") # the sorting does not work for some reason
+            results = searcher.search(query) # the sorting does not work for some reason # , sortedby="pagerank"
     
             unique_urls = set()
             result_urls = []
             for result in results:
+                print(result['pagerank'])
+                print(result.score)
                 if result["url"] not in unique_urls:
                     unique_urls.add(result["url"])
                     res_dict = {"url": result['url'], "title": result["title"], "headline": result["headline"], "preview": result["preview"], "pagerank": result["pagerank"]}
