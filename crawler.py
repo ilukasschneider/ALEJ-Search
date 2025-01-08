@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
+from urllib.robotparser import RobotFileParser
 import traceback
 from tokenizer import *
 
@@ -10,6 +11,7 @@ class Crawler:
         self.visited = set()
         self.index = index
         self.base_domain = None
+        self.robot_parser = None
 
         # pagerank data
         self.out_count = {} # url: count of outgoing links
@@ -19,13 +21,30 @@ class Crawler:
     def initialize_crawler(self, start_url):
         self.base_domain = urlparse(start_url).netloc
         self.to_visit.append(start_url)
+
+        robots_url = urljoin(start_url, 'robots.txt')
+        self.robot_parser = RobotFileParser()
+        self.robot_parser.set_url(robots_url)
+        try:
+            self.robot_parser.read()
+
+        except Exception as e:
+            print(f"Failed to load robots.txt {e}")
+            self.robot_parser = None # assume all paths are allowed
+
         self.crawl()
 
 
     def crawl(self):
+
         while self.to_visit:
             current_url = self.to_visit.pop(0)
             self.visited.add(current_url)
+
+            if self.robot_parser and not self.robot_parser.can_fetch("*", current_url):
+                print(f"Disallowed by robots.txt: {current_url}")
+                continue
+
             soup = self.process(current_url)
             if soup:
                 self.parse(current_url, soup)
@@ -43,10 +62,13 @@ class Crawler:
 
 
     def calculate_score(self, pr, url):
-        score = 0 
-        for in_url in self.in_urls[url]:
-            if in_url in self.out_count and self.out_count[in_url] > 0: 
-                score += pr[in_url] / self.out_count[in_url]
+        score = 0
+        try:
+            for in_url in self.in_urls[url]:
+                if in_url in self.out_count and self.out_count[in_url] > 0:
+                    score += pr[in_url] / self.out_count[in_url]
+        except Exception as e:
+            print(f"Failed to calculate score {e}")
         return score
 
 
@@ -70,7 +92,6 @@ class Crawler:
                 print(f"Converged after {i + 1} iterations.")
                 break
 
-        print(pr)
         self.index.add_pr(pr)
         
 
@@ -83,6 +104,7 @@ class Crawler:
 
     # search for other urls in the current url and append them
     def process(self, url):
+
         # get the other urls
         try:
             response = requests.get(url)
@@ -113,32 +135,38 @@ class Crawler:
             )
             return soup
         except Exception as e:
-            print("404 found. ", e)
+            print("Error while processing URL ", e)
             return None
 
     def extract_metadata(self, soup):
-        title = soup.title.string if soup.title else "No Title"
-        headline = soup.find('h1').get_text(strip=True) if soup.find('h1') else "No Headline"
-        
-        relevant_tags = {"p", "pre", "article", "section", "div"} 
+        try:
+            title = soup.title.string if soup.title else "No Title"
 
-        preview = ""
-        for element in soup.body.descendants:
-            if element.name in relevant_tags:
-                preview = element.get_text(strip=True)
-                if preview: 
-                    break
+            headline = soup.find('h1').get_text(strip=True) if soup.find('h1') else "No Headline"
 
-        # If no relevant tag is found, use raw text excluding overhead
-        if not preview:
-            raw_text = soup.get_text(strip=True)
-            if title in raw_text:
-                raw_text = raw_text.replace(title, "")
-            if headline in raw_text:
-                raw_text = raw_text.replace(headline, "")
-            preview = raw_text[:300] 
+            relevant_tags = {"p", "pre", "article", "section", "div"}
 
-        preview = preview.strip()[:300]
+            preview = ""
+            for element in soup.body.descendants:
+                if element.name in relevant_tags:
+                    preview = element.get_text(strip=True)
+                    if preview:
+                        break
+
+
+            # If no relevant tag is found, use raw text excluding overhead
+            if not preview:
+                raw_text = soup.get_text(strip=True)
+                if title in raw_text:
+                    raw_text = raw_text.replace(title, "")
+                if headline in raw_text:
+                    raw_text = raw_text.replace(headline, "")
+                preview = raw_text[:300]
+
+            preview = preview.strip()[:200]
+        except Exception as e:
+            print("Error while extracting metadata ", e)
+
         return title, headline, preview
 
 
@@ -146,7 +174,6 @@ class Crawler:
 
     # pass url and text to the index
     def parse(self, url, soup):
-
         try:
             # get the content of the page
 
@@ -155,10 +182,8 @@ class Crawler:
             
             title, headline, preview = self.extract_metadata(soup)
 
-
             # pass url and text to the index
             self.index.index_content(url, text, title, headline, preview)
-            
 
         except Exception as e:
             traceback.print_exc()

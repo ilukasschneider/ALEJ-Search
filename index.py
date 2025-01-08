@@ -22,13 +22,17 @@ class Index:
 
     # add the url and its respective text to the index
     def index_content(self, url, text, title, headline, preview):
+
         writer = self.ix.writer()
+
         try:
             writer.add_document(url=url, content=text, title=title, headline=headline, preview=preview)
+
         except Exception as e:
             print(f"Failed to index content from {url}: {e}")
         finally:
             writer.commit()
+
 
 
     def add_pr(self, pr):
@@ -67,8 +71,7 @@ class Index:
                     unique_urls.add(result["url"])
                     res_dict = {"url": result['url'], "title": result["title"], "headline": result["headline"], "preview": result["preview"], "pagerank": result["pagerank"]}
                     result_urls.append(res_dict)
-                    print("URL:", result['url'], result["title"], result["pagerank"])
             
             result_urls.sort(key=lambda x: x["pagerank"], reverse=True) # sort by pagerank
-            print(result_urls)
+
             return result_urls 

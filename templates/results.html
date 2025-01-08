@@ -74,6 +74,37 @@
         .back-button:hover {
             background-color: #3367D6;
         }
+        /* Pagination Buttons Styling */
+        .pagination a {
+            color: #4285F4; /* Blue color for the buttons */
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            background-color: white;
+            border: 1px solid #4285F4;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .pagination a:hover {
+            background-color: #3367D6; /* Slightly darker blue on hover */
+            color: white;
+        }
+
+        .pagination a:active {
+            background-color: #3367D6; /* Same as hover */
+            color: white;
+        }
+
+        .pagination a.disabled {
+            color: #ccc;
+            border-color: #ccc;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +128,20 @@
                 <p>Your query "{{ original_query }}" did not match any documents.</p>
             </div>
         {% endif %}
+
+     <!-- Pagination Controls -->
+        <div class="pagination">
+            {% if pagination_info.current_page > 1 %}
+                <a href="{{ url_for('results', query=original_query, page=pagination_info.prev_page) }}">Previous</a>
+            {% endif %}
+
+            <span>Page {{ pagination_info.current_page }} of {{ pagination_info.total_pages }}</span>
+
+            {% if pagination_info.has_next %}
+                <a href="{{ url_for('results', query=original_query, page=pagination_info.next_page) }}">Next</a>
+            {%  endif %}
+        </div>
+
         <a href="/" class="back-button">Back to Search</a>
     </div>
 </body>
