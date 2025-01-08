@@ -122,14 +122,8 @@
                     <p><a href="{{ result.url }}" target="_blank">{{ result.url }}</a></p>
                 </div>
             {% endfor %}
-        {% else %}
-            <div class="no-results">
-                <h1>No Results Found</h1>
-                <p>Your query "{{ original_query }}" did not match any documents.</p>
-            </div>
-        {% endif %}
 
-     <!-- Pagination Controls -->
+            <!-- Pagination Controls -->
         <div class="pagination">
             {% if pagination_info.current_page > 1 %}
                 <a href="{{ url_for('results', query=original_query, page=pagination_info.prev_page) }}">Previous</a>
@@ -141,6 +135,13 @@
                 <a href="{{ url_for('results', query=original_query, page=pagination_info.next_page) }}">Next</a>
             {%  endif %}
         </div>
+        {% else %}
+            <div class="no-results">
+                <h1>No Results Found</h1>
+                <p>Your query "{{ original_query }}" did not match any documents.</p>
+            </div>
+        {% endif %}
+
 
         <a href="/" class="back-button">Back to Search</a>
     </div>
