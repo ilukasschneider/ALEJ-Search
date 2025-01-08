@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import nltk
 from index import Index
+import traceback
 
 # Ensure NLTK resources are downloaded
 nltk.download('punkt')
@@ -14,6 +15,12 @@ nltk.download('stopwords')
 app = Flask(__name__)
 
 RESULTS_PER_PAGE = 5 # modify if you want to change the number of results shown per page
+
+
+
+@app.errorhandler(500)
+def internal_error(exception):
+   return "<pre>"+traceback.format_exc()+"</pre>"
 
 
 @app.route('/', methods=['GET'])
