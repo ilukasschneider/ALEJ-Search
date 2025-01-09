@@ -17,6 +17,8 @@ Begin by running the crawler to scrape and index web content. This step only nee
 python crawling.py
 ~~~
 
+Alternatively, you can use the provided index that was a result from crawling https://fs-cogsci.uos.de/
+
 ### 2. Launch the Frontend
 Once the crawler has finished, start the Flask web server to serve the frontend:
 ~~~bash
@@ -24,4 +26,4 @@ flask --app alej_search run
 ~~~
 
 The App is also deployed on a server provided by the University of Osnabrück and can be reached via
-`http://vm146.rz.uni-osnabrueck.de/u063/alej-search.wsgi/`
+http://vm146.rz.uni-osnabrueck.de/u063/alej-search.wsgi/
