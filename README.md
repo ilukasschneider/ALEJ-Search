@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ### 1. Start the Crawler
 Begin by running the crawler to scrape and index web content. This step only needs to be done once so that the search engine has web content to search through:
 ~~~bash
-python crawler.py
+python crawling.py
 ~~~
 
 ### 2. Launch the Frontend
@@ -22,3 +22,6 @@ Once the crawler has finished, start the Flask web server to serve the frontend:
 ~~~bash
 flask --app alej_search run
 ~~~
+
+The App is also deployed on a server provided by the University of Osnabrück and can be reached via
+`http://vm146.rz.uni-osnabrueck.de/u063/alej-search.wsgi/`
