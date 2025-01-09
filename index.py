@@ -1,3 +1,4 @@
+# File contains Index class to manage all the index related tasks (search, saving to disk, ..)
 import os
 import requests
 from whoosh import index, sorting
@@ -9,10 +10,11 @@ from tokenizer import *
 class Index:
     def __init__(self):
         self.index_dir = "indexdir"
+        # store url with a couple of additional information about each page 
         self.schema = Schema(url=ID(stored=True, unique=True), content=TEXT(stored=True), title=TEXT(stored=True), headline=TEXT(stored=True), preview=TEXT(stored=True), pagerank=NUMERIC(stored=True, sortable=True))
         self.ix = self.create_or_open_index()
 
-    # check if there is already a file, create one if not
+
     def create_or_open_index(self):
         if not os.path.exists(self.index_dir):
             os.makedirs(self.index_dir)
@@ -20,7 +22,7 @@ class Index:
         return index.open_dir(self.index_dir)
 
 
-    # add the url and its respective text to the index
+    # add the url and its respective text as well as  to the index
     def index_content(self, url, text, title, headline, preview):
 
         writer = self.ix.writer()
@@ -34,7 +36,7 @@ class Index:
             writer.commit()
 
 
-
+    # adds the pagerank values to the whoosh index
     def add_pr(self, pr):
         with self.ix.searcher() as searcher:  
             with self.ix.writer() as writer:  
@@ -43,7 +45,7 @@ class Index:
                     if existing_doc:
                        
                         content, title, headline, preview = existing_doc.get("content"), existing_doc.get("title"), existing_doc.get("headline"), existing_doc.get("preview")
-                        # Needs to be done this way, otherwise will overwrite the other fields.. 
+                        # Needs to be done this way, otherwise will overwrite the other fields and add a new document even if we use the update function.. for some reason 
                         writer.delete_by_term("url", url)
                         writer.add_document(
                             url=url,
@@ -60,24 +62,32 @@ class Index:
 
     # search in the index for the query
     def search(self, query_str):
+        pr_weight, score_weight = 0.5, 0.5
         with self.ix.searcher() as searcher:
             query_str = process_text(query_str)
 
             query = QueryParser("content", self.ix.schema).parse(query_str)
 
             
-            results = searcher.search(query) # the sorting does not work for some reason # , sortedby="pagerank"
+            results = searcher.search(query) 
     
             unique_urls = set()
             result_urls = []
+            max_pr, max_score = 0, 0
+            
             for result in results:
-                print(result['pagerank'])
+               
+                if result["pagerank"] > max_pr: max_pr = result["pagerank"]
+                if result.score > max_score: max_score = result.score
+
                 print(result.score)
                 if result["url"] not in unique_urls:
                     unique_urls.add(result["url"])
-                    res_dict = {"url": result['url'], "title": result["title"], "headline": result["headline"], "preview": result["preview"], "pagerank": result["pagerank"]}
+                    res_dict = {"url": result['url'], "title": result["title"], "headline": result["headline"], "preview": result["preview"], "pagerank": result["pagerank"], "score": result.score}
                     result_urls.append(res_dict)
             
-            result_urls.sort(key=lambda x: x["pagerank"], reverse=True) # sort by pagerank
-
+            # sort s the result by a weighted sum
+            # combines the quality of the page (pagerank) with how well the page relates to the query (whoosh score)
+            result_urls.sort(key=lambda x:  pr_weight * (x["pagerank"] / max_pr) + score_weight * (x["score"] / max_score), reverse=True) 
+            
             return result_urls 
