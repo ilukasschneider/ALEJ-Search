@@ -2,7 +2,7 @@ from crawler import Crawler
 from index import Index
 from whoosh.index import open_dir
 import sys
-
+# increase the recursion limit to be able to crawl bigger pages
 sys.setrecursionlimit(10000)
 
 
@@ -17,7 +17,7 @@ def dump_index_to_text(index_dir, output_file):
                 f.write(f"{fieldname}: {value}\n")
             f.write("\n")
 
-
+# creates a new Crawler object and provides it with a start url
 def initialize_crawler(start_url):
     index = Index()
     crawler = Crawler(index)
@@ -36,6 +36,7 @@ if __name__ == "__main__":
     start_url = "https://fs-cogsci.uos.de"
 
     initialize_crawler(start_url)
-    dump_index_to_text("indexdir", "test.txt")
+    # uncomment if you want to see the content of the index
+    # dump_index_to_text("indexdir", "test.txt")
 
 

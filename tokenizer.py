@@ -2,7 +2,7 @@ import re
 from nltk.stem import PorterStemmer
 import nltk
 
-
+# dictionary of common contractions
 contractions = {
     "ain't": "am not / are not",
     "aren't": "are not / am not",
@@ -170,5 +170,5 @@ def process_text(raw_text):
     for word in tokenized_text:
         stemmed_word = stemmer.stem(word)
         processed_text += " " + stemmed_word
-
+    # return the processed text for improving the querying performance
     return processed_text

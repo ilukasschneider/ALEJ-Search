@@ -16,6 +16,7 @@ Begin by running the crawler to scrape and index web content. This step only nee
 ~~~bash
 python crawling.py
 ~~~
+If you do that, make sure the domain is not too big due to memory limits.
 
 Alternatively, you can use the provided index that was a result from crawling https://fs-cogsci.uos.de/
 

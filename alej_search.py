@@ -70,7 +70,7 @@ def results():
         'prev_page': page - 1,
         'next_page': page + 1,
     }
-
+    # render the results page
     return render_template(
         "results.html",
         results=paginated_results,

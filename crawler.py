@@ -1,3 +1,4 @@
+# File contains the Crawler class, handles the content of different urls in a given domain and passes it to the index
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
@@ -11,6 +12,8 @@ class Crawler:
         self.visited = set()
         self.index = index
         self.base_domain = None
+
+        # necessary as some pages disallow crawling
         self.robot_parser = None
 
         # pagerank data
@@ -19,9 +22,11 @@ class Crawler:
 
 
     def initialize_crawler(self, start_url):
+        # set the domain corresponding to the start_url
         self.base_domain = urlparse(start_url).netloc
         self.to_visit.append(start_url)
 
+        # check the robots.txt for pages/items that may not be crawled
         robots_url = urljoin(start_url, 'robots.txt')
         self.robot_parser = RobotFileParser()
         self.robot_parser.set_url(robots_url)
@@ -41,17 +46,20 @@ class Crawler:
             current_url = self.to_visit.pop(0)
             self.visited.add(current_url)
 
+            # check whether the current_url is allowed to crawl via the robots.txt
             if self.robot_parser and not self.robot_parser.can_fetch("*", current_url):
                 print(f"Disallowed by robots.txt: {current_url}")
                 continue
 
+            # check for outgoing urls and get the soup to extract desired data of the url
             soup = self.process(current_url)
             if soup:
                 self.parse(current_url, soup)
-        
+        # when nothing is left to crawl, calculate the pagerank
         self.pagerank()
 
-    # if an url is not in out_count is hasnt been crawled (e.g. 404) -> this would mess up ranking propagation so remove from in_urls
+    # preprocessing for pagerank
+    # if an url is not in out_count it hasn't been crawled (e.g. 404) -> this would mess up ranking propagation so remove from in_urls
     def clean_pr_data(self):
         for url in list(self.in_urls.keys()):
             if url not in self.out_count:
@@ -60,7 +68,7 @@ class Crawler:
 
                 del self.in_urls[url]
 
-
+    # caclulate the score (relation of ingoing and outgoing urls)
     def calculate_score(self, pr, url):
         score = 0
         try:
@@ -71,25 +79,29 @@ class Crawler:
             print(f"Failed to calculate score {e}")
         return score
 
-
+    # determine the pagerank
     def pagerank(self):
+        # needed to avoid convergence towards 0
         damping_factor = 0.5
         max_iterations = 1000
         tolerance = 1e-6
         self.clean_pr_data()
-        
+
+        # initialize the pagerank
         pr = {key: 1/len(self.out_count) for key in self.out_count}
 
         for i in range(max_iterations):
             next_pr = {}
             
-            for url in pr.keys():  
+            for url in pr.keys():
+                # caclulate the next pagerank
                 next_pr[url] = (1 - damping_factor) / len(self.out_count)
                 next_pr[url] += damping_factor * self.calculate_score(pr, url)
 
             max_change = max(abs(next_pr[url] - pr[url]) for url in pr.keys())
             pr = next_pr
 
+            # stop when the difference of pagerank is smaller than the set tolerance
             if max_change < tolerance:
                 print(f"Converged after {i + 1} iterations.")
                 break
@@ -110,14 +122,17 @@ class Crawler:
         # get the other urls
         try:
             response = requests.get(url)
+            # check for errors
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
+            # get other urls
             links = soup.find_all('a', href=True)
-           
+
+            # get outgoing and ingoing urls (needed for pagerank)
             rel_out = [urljoin(url, link['href']) for link in links if self.is_same_domain(link['href'], url)]
             
             self.out_count[url] = len(rel_out)
-            
+
             for out in rel_out:
                 if out in self.in_urls:
                     self.in_urls[out].add(url)
@@ -125,7 +140,7 @@ class Crawler:
                     self.in_urls[out] = {url}
                     self.out_count
             
-           
+           # new urls have to be visited
             self.to_visit.extend(
                 [
                     link
@@ -141,6 +156,7 @@ class Crawler:
             print("Error while processing URL ", e)
             return None
 
+    # extract the metadata (titles, headlines and text preview)
     def extract_metadata(self, soup):
         try:
             title = soup.title.string if soup.title else "No Title"
@@ -150,6 +166,7 @@ class Crawler:
             relevant_tags = {"p", "pre", "article", "section", "h2"}
 
             preview = ""
+            # get a meaningful preview
             for element in soup.body.descendants:
                 if element.name in relevant_tags:
                     preview = element.get_text(strip=True)
@@ -164,6 +181,7 @@ class Crawler:
                     raw_text = raw_text.replace(title, "")
                 if headline in raw_text:
                     raw_text = raw_text.replace(headline, "")
+                # preview should not be too large
                 preview = raw_text[:300]
 
             preview = preview.strip()[:300]
@@ -179,7 +197,6 @@ class Crawler:
     def parse(self, url, soup):
         try:
             # get the content of the page
-
             text = soup.get_text(separator=' ', strip=True)
             text = process_text(text)
             

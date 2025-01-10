@@ -16,6 +16,7 @@ class Index:
 
 
     def create_or_open_index(self):
+        # if there is no index yet create a new directory, otherwise the existing one will be manipulated
         if not os.path.exists(self.index_dir):
             os.makedirs(self.index_dir)
             return index.create_in(self.index_dir, self.schema)
@@ -74,7 +75,7 @@ class Index:
             unique_urls = set()
             result_urls = []
             max_pr, max_score = 0, 0
-            
+            # check the pageranks and sort the results according to them
             for result in results:
                
                 if result["pagerank"] > max_pr: max_pr = result["pagerank"]
