@@ -29,11 +29,17 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/game', methods=['GET'])
+def game():
+    """Render the search form."""
+    return render_template("game.html")
+
+
 def search(query):
 
     index = Index()  # Assuming the index is already saved; otherwise, persist it between runs
     results = index.search(query)
-    
+
     return results
 
 

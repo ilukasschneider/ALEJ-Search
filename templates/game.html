@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Minesweeper</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                text-align: center;
+                background-color: #fff;
+                color: #000;
+            }
+
+            .logo {
+                margin-top: 40px;
+                font-size: 48px;
+                font-weight: bold;
+            }
+            .logo span:nth-child(1) {
+                color: #4285f4;
+            }
+            .logo span:nth-child(2) {
+                color: #ea4335;
+            }
+            .logo span:nth-child(3) {
+                color: #fbbc05;
+            }
+            .logo span:nth-child(4) {
+                color: #34a853;
+            }
+            .logo span:nth-child(5) {
+                color: #4285f4;
+            }
+            .logo span:nth-child(6) {
+                color: #ea4335;
+            }
+            .logo span:nth-child(7) {
+                color: #fbbc05;
+            }
+            .logo span:nth-child(8) {
+                color: #34a853;
+            }
+            .logo span:nth-child(9) {
+                color: #4285f4;
+            }
+            .logo span:nth-child(10) {
+                color: #ea4335;
+            }
+            .logo span:nth-child(11) {
+                color: #fbbc05;
+            }
+
+            .score-container {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+            .game-container {
+                display: inline-block;
+                margin-top: 10px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: center;
+            }
+
+            #board {
+                display: grid;
+                grid-template-columns: repeat(10, 30px);
+                grid-template-rows: repeat(10, 30px);
+                gap: 2px;
+                margin-top: 10px;
+            }
+
+            .cell {
+                width: 30px;
+                height: 30px;
+                background-color: #eee;
+                font-size: 14px;
+                line-height: 30px;
+                text-align: center;
+                cursor: pointer;
+                user-select: none;
+            }
+            .revealed {
+                background-color: #ddd;
+                cursor: default;
+            }
+
+            .bomb {
+                background-color: #ea4335; /* Red */
+                color: #fff;
+            }
+            .flag {
+                background-color: #fbbc05; /* Yellow */
+                color: #000;
+            }
+
+            .buttons-container {
+                margin-top: 20px;
+            }
+            #resetBtn,
+            .back-button {
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                margin: 0 8px;
+                cursor: pointer;
+                color: #fff;
+            }
+
+            #resetBtn {
+                background-color: #4285f4;
+            }
+            #resetBtn:hover {
+                background-color: #3367d6;
+            }
+
+            .back-button {
+                background-color: #34a853;
+            }
+            .back-button:hover {
+                background-color: #2a7a44;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 class="logo">
+            <span>M</span><span>I</span><span>N</span><span>E</span>
+            <span>S</span><span>W</span><span>E</span><span>E</span>
+            <span>P</span><span>E</span><span>R</span>
+        </h1>
+
+        <div class="score-container">Bombs: <span id="bombCount">10</span></div>
+
+        <div class="game-container">
+            <div id="board"></div>
+        </div>
+
+        <div class="buttons-container">
+            <button id="resetBtn">New Game</button>
+            <button
+                type="button"
+                class="back-button"
+                onclick="window.location.href='{{ url_for('index') }}'"
+            >
+                Back to Search
+            </button>
+        </div>
+
+        <script>
+            // GAME LOGIC
+            // basic settings to edit for different game sizes
+            const SIZE = 10;
+            const BOMB_COUNT = 8;
+
+            const boardEl = document.getElementById("board");
+            const bombCountEl = document.getElementById("bombCount");
+            const resetBtn = document.getElementById("resetBtn");
+
+            let cells = [];
+            let gameOver = false;
+
+            // build board on load
+            window.onload = init;
+            resetBtn.onclick = init;
+
+            // make and show board
+            function init() {
+                boardEl.innerHTML = "";
+                cells = [];
+                gameOver = false;
+                bombCountEl.textContent = BOMB_COUNT;
+
+                // create cells
+                for (let r = 0; r < SIZE; r++) {
+                    for (let c = 0; c < SIZE; c++) {
+                        cells.push({
+                            r,
+                            c,
+                            bomb: false,
+                            revealed: false,
+                            count: 0,
+                        });
+                    }
+                }
+
+                // place bombs
+                let placed = 0;
+                while (placed < BOMB_COUNT) {
+                    let idx = Math.floor(Math.random() * cells.length);
+                    if (!cells[idx].bomb) {
+                        cells[idx].bomb = true;
+                        placed++;
+                    }
+                }
+
+                // count adjacent bombs
+                cells.forEach((cell) => {
+                    if (!cell.bomb) {
+                        cell.count = adjBombs(cell);
+                    }
+                });
+
+                // show cells on board
+                cells.forEach((cell) => {
+                    let div = document.createElement("div");
+                    div.className = "cell";
+                    div.onclick = () => reveal(cell);
+                    boardEl.appendChild(div);
+                });
+            }
+
+            // count bombs around a cell
+            function adjBombs(cell) {
+                let count = 0;
+                for (let r = cell.r - 1; r <= cell.r + 1; r++) {
+                    for (let c = cell.c - 1; c <= cell.c + 1; c++) {
+                        if (validRC(r, c)) {
+                            if (getCell(r, c).bomb) count++;
+                        }
+                    }
+                }
+                return count;
+            }
+
+            // reveal cell
+            function reveal(cell) {
+                if (cell.revealed || gameOver) return;
+                cell.revealed = true;
+
+                let div = boardEl.children[cell.r * SIZE + cell.c];
+                div.classList.add("revealed");
+
+                if (cell.bomb) {
+                    div.classList.add("bomb");
+                    div.textContent = "X";
+                    gameOver = true;
+                    alert("You hit a bomb!");
+                } else {
+                    div.textContent = cell.count > 0 ? cell.count : "";
+                    if (cell.count === 0) {
+                        flood(cell);
+                    }
+                }
+            }
+
+            // reveal empty neighbors
+            function flood(cell) {
+                for (let r = cell.r - 1; r <= cell.r + 1; r++) {
+                    for (let c = cell.c - 1; c <= cell.c + 1; c++) {
+                        if (validRC(r, c)) {
+                            let n = getCell(r, c);
+                            if (!n.bomb && !n.revealed) {
+                                reveal(n);
+                            }
+                        }
+                    }
+                }
+            }
+
+            // check valid row/col
+            function validRC(r, c) {
+                return r >= 0 && r < SIZE && c >= 0 && c < SIZE;
+            }
+
+            // get cell
+            function getCell(r, c) {
+                return cells[r * SIZE + c];
+            }
+        </script>
+    </body>
+</html>

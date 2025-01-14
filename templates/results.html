@@ -1,149 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALEJ Search Results</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
-        }
-        .logo {
-            font-size: 48px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .logo span:nth-child(1) { color: #4285F4; } /* Blue */
-        .logo span:nth-child(2) { color: #EA4335; } /* Red */
-        .logo span:nth-child(3) { color: #FBBC05; } /* Yellow */
-        .logo span:nth-child(4) { color: #34A853; } /* Green */
-        .results-container {
-            max-width: 800px;
-            margin: auto;
-            margin-top: 30px;
-        }
-        .result-card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-        .result-card h2 {
-            margin: 0;
-            font-size: 20px;
-        }
-        .result-card h3 {
-            margin: 10px 0;
-            font-size: 16px;
-            color: #555;
-        }
-        .result-card p {
-            margin: 10px 0;
-            color: #555;
-        }
-        .result-card a {
-            color: #4285F4;
-            text-decoration: none;
-        }
-        .result-card a:hover {
-            text-decoration: underline;
-        }
-        .no-results {
-            text-align: center;
-            font-size: 18px;
-            color: #555;
-            margin-top: 50px;
-        }
-        .back-button {
-            display: block;
-            margin: 20px auto;
-            width: 200px;
-            padding: 10px;
-            text-align: center;
-            font-size: 16px;
-            background-color: #4285F4;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            border: none;
-        }
-        .back-button:hover {
-            background-color: #3367D6;
-        }
-        /* Pagination Buttons Styling */
-        .pagination a {
-            color: #4285F4; /* Blue color for the buttons */
-            text-decoration: none;
-            padding: 10px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
-            background-color: white;
-            border: 1px solid #4285F4;
-            font-size: 14px;
-            font-weight: bold;
-            display: inline-block;
-            cursor: pointer;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ALEJ Search Results</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                text-align: center;
+            }
+            .logo {
+                font-size: 48px;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+            .logo span:nth-child(1) {
+                color: #4285f4;
+            } /* Blue */
+            .logo span:nth-child(2) {
+                color: #ea4335;
+            } /* Red */
+            .logo span:nth-child(3) {
+                color: #fbbc05;
+            } /* Yellow */
+            .logo span:nth-child(4) {
+                color: #34a853;
+            } /* Green */
+            .results-container {
+                max-width: 800px;
+                margin: auto;
+                margin-top: 30px;
+            }
+            .result-card {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 20px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+            .result-card h2 {
+                margin: 0;
+                font-size: 20px;
+            }
+            .result-card h3 {
+                margin: 10px 0;
+                font-size: 16px;
+                color: #555;
+            }
+            .result-card p {
+                margin: 10px 0;
+                color: #555;
+            }
+            .result-card a {
+                color: #4285f4;
+                text-decoration: none;
+            }
+            .result-card a:hover {
+                text-decoration: underline;
+            }
+            .no-results {
+                text-align: center;
+                font-size: 18px;
+                color: #555;
+                margin-top: 50px;
+            }
+            .back-button {
+                display: block;
+                margin: 20px auto;
+                width: 200px;
+                padding: 10px;
+                text-align: center;
+                font-size: 16px;
+                background-color: #4285f4;
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+                border: none;
+            }
+            .back-button:hover {
+                background-color: #3367d6;
+            }
+            /* Pagination Buttons Styling */
+            .pagination a {
+                color: #4285f4; /* Blue color for the buttons */
+                text-decoration: none;
+                padding: 10px 15px;
+                margin: 0 5px;
+                border-radius: 5px;
+                background-color: white;
+                border: 1px solid #4285f4;
+                font-size: 14px;
+                font-weight: bold;
+                display: inline-block;
+                cursor: pointer;
+            }
 
-        .pagination a:hover {
-            background-color: #3367D6; /* Slightly darker blue on hover */
-            color: white;
-        }
+            .pagination a:hover {
+                background-color: #3367d6; /* Slightly darker blue on hover */
+                color: white;
+            }
 
-        .pagination a:active {
-            background-color: #3367D6; /* Same as hover */
-            color: white;
-        }
+            .pagination a:active {
+                background-color: #3367d6; /* Same as hover */
+                color: white;
+            }
 
-        .pagination a.disabled {
-            color: #ccc;
-            border-color: #ccc;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="logo">
-        <span>A</span><span>L</span><span>E</span><span>J</span> Search
-    </div>
-    <div class="results-container">
-        {% if results %}
+            .pagination a.disabled {
+                color: #ccc;
+                border-color: #ccc;
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="logo">
+            <span>A</span><span>L</span><span>E</span><span>J</span> Search
+        </div>
+        <div class="results-container">
+            {% if results %}
             <h1>Search Results</h1>
             {% for result in results %}
-                <div class="result-card">
-                    <h2><a href="{{ result.url }}" target="_blank">{{ result.title }}</a></h2>
-                    <h3>{{ result.headline }}</h3>
-                    <p>{{ result.preview }}...</p>
-                    <p><a href="{{ result.url }}" target="_blank">{{ result.url }}</a></p>
-                </div>
+            <div class="result-card">
+                <h2>
+                    <a href="{{ result.url }}" target="_blank"
+                        >{{ result.title }}</a
+                    >
+                </h2>
+                <h3>{{ result.headline }}</h3>
+                <p>{{ result.preview }}...</p>
+                <p>
+                    <a href="{{ result.url }}" target="_blank"
+                        >{{ result.url }}</a
+                    >
+                </p>
+            </div>
             {% endfor %}
 
             <!-- Pagination Controls -->
-        <div class="pagination">
-            {% if pagination_info.current_page > 1 %}
-                <a href="{{ url_for('results', query=original_query, page=pagination_info.prev_page) }}">Previous</a>
-            {% endif %}
+            <div class="pagination">
+                {% if pagination_info.current_page > 1 %}
+                <a
+                    href="{{ url_for('results', query=original_query, page=pagination_info.prev_page) }}"
+                    >Previous</a
+                >
+                {% endif %}
 
-            <span>Page {{ pagination_info.current_page }} of {{ pagination_info.total_pages }}</span>
+                <span
+                    >Page {{ pagination_info.current_page }} of {{
+                    pagination_info.total_pages }}</span
+                >
 
-            {% if pagination_info.has_next %}
-                <a href="{{ url_for('results', query=original_query, page=pagination_info.next_page) }}">Next</a>
-            {%  endif %}
-        </div>
-        {% else %}
+                {% if pagination_info.has_next %}
+                <a
+                    href="{{ url_for('results', query=original_query, page=pagination_info.next_page) }}"
+                    >Next</a
+                >
+                {% endif %}
+            </div>
+            {% else %}
             <div class="no-results">
                 <h1>No Results Found</h1>
-                <p>Your query "{{ original_query }}" did not match any documents.</p>
+                <p>
+                    Your query "{{ original_query }}" did not match any
+                    documents.
+                </p>
             </div>
-        {% endif %}
+            {% endif %}
 
-
-        <a href="{{ url_for('index')}}" class="back-button">Back to Search</a>
-    </div>
-</body>
+            <a href="{{ url_for('index')}}" class="back-button"
+                >Back to Search</a
+            >
+            <a href="{{ url_for('game')}}" class="back-button"
+                >wanna play a game?</a
+            >
+        </div>
+    </body>
 </html>
